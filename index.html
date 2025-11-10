@@ -77,6 +77,7 @@
             font-size: 1.5rem;
             margin-bottom: 20px;
             font-weight: 300;
+            line-height: 1.4;
         }
         
         .contact-info {
@@ -160,6 +161,13 @@
             gap: 5px;
         }
         
+        /* FIXED: Added text justification for paragraphs */
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        
+        /* Improved list styling */
         ul {
             padding-left: 20px;
         }
@@ -167,6 +175,7 @@
         li {
             margin-bottom: 8px;
             position: relative;
+            text-align: left; /* Keep list items left-aligned */
         }
         
         li::before {
@@ -296,6 +305,12 @@
             padding: 5px 12px;
             border-radius: 20px;
             font-size: 0.9rem;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+        
+        .skill-tag:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
         }
         
         .skill-tag:nth-child(2n) {
@@ -374,6 +389,17 @@
             animation-play-state: paused;
         }
         
+        /* Fade-in animation for skill tags */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease forwards;
+        }
+        
+        /* Improved responsive design */
         @media (max-width: 768px) {
             .contact-info {
                 flex-direction: column;
@@ -395,6 +421,12 @@
             .skills-scroll-track {
                 animation: scroll-skills 20s linear infinite;
             }
+            
+            /* Adjust text justification for mobile */
+            p {
+                text-align: left;
+                hyphens: auto;
+            }
         }
     </style>
 </head>
@@ -403,7 +435,7 @@
         <div class="container">
             <div class="header-content">
                 <h1>Abdul Moeed</h1>
-                <p class="title">Machine Learning | Deep Learning | Data Science Engineer | Front-End Website Developer </p>
+                <p class="title">Machine Learning | Deep Learning | Data Science Engineer | Front-End Website Developer</p>
                 <div class="contact-info">
                     <a href="tel:+923125675916"><i class="fas fa-phone"></i> +92 312 5675916</a>
                     <a href="mailto:abdulmoeed04242@gmail.com"><i class="fas fa-envelope"></i> abdulmoeed04242@gmail.com</a>
@@ -417,7 +449,7 @@
     <div class="container">
         <section id="about">
             <h2><i class="fas fa-user"></i> About Me</h2>
-            <p>I am Abdul Moeed from Pakistan, a passionate Computer Science graduate with a strong foundation in data science, machine learning, and predictive modeling. My interests revolve around building real-world solutions through clean, efficient code and data-driven methodologies. I have hands-on experience in Python, Scikit-learn, Pandas, and visualization tools, with projects ranging from disaster risk classification to salary prediction using regression. I've also worked as a Data Science Intern, where I contributed to model development, EDA, and feature engineering. With a focus on continuous learning and practical implementation, I am eager to grow in environments that value innovation, applied research, and real-world impact in the field of data science.</p>
+            <p>I am Abdul Moeed, a passionate Computer Science graduate from Pakistan with expertise in Data Science, Machine Learning, and AI-driven solutions. My technical proficiency spans across Python, Scikit-learn, Pandas, and data visualization tools, complemented by strong skills in web technologies including HTML, CSS, JavaScript, PHP, and SQL. I have developed several real-world projects including an AI Assistant Chatbot with an interactive dashboard for real-time conversation monitoring and analytics, disaster risk classification systems, and predictive models for healthcare and real estate applications. The chatbot dashboard features user authentication, conversation history tracking, performance metrics, and admin controls for managing client interactions. During my tenure as a Data Science Intern, I actively contributed to end-to-end model development, from data preprocessing and exploratory data analysis (EDA) to feature engineering and model deployment. With a commitment to continuous learning and practical implementation, I am eager to contribute to innovative environments that value data-driven decision making, applied research, and creating meaningful impact through artificial intelligence and machine learning solutions.</p>
         </section>
 
         <section id="skills">
@@ -673,7 +705,7 @@
             <div class="project">
                 <h3>Dr. Waqas Ahmed - Assistant Professor</h3>
                 <p>"During my time teaching Abdul Moeed, I observed his strong work ethic, quick grasp of complex topics, and passion for applying data science to real-world problems. His contributions to class discussions and project work were consistently thoughtful and well-executed, making him stand out as a dedicated and capable student."</p>
-                <p class="date">Email: wagas.ahmed@hirecuni.edu.pk</p>
+                <p class="date">Email: waqas.ahmed@hirecuni.edu.pk</p>
             </div>
         </section>
     </div>
