@@ -41,13 +41,18 @@
         header {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
-            padding: 50px 20px;
+            padding: 60px 20px;
             text-align: center;
             border-radius: 0 0 30px 30px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.15);
             margin-bottom: 40px;
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 300px;
         }
         
         header::before {
@@ -65,19 +70,28 @@
         .header-content {
             position: relative;
             z-index: 1;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         
         h1 {
             font-size: 3rem;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             font-weight: 700;
+            text-align: center;
         }
         
         .title {
             font-size: 1.5rem;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             font-weight: 300;
             line-height: 1.4;
+            text-align: center;
+            max-width: 800px;
+            padding: 0 20px;
         }
         
         .contact-info {
@@ -85,7 +99,7 @@
             justify-content: center;
             flex-wrap: wrap;
             gap: 20px;
-            margin-top: 20px;
+            margin-top: 10px;
         }
         
         .contact-info a {
@@ -161,13 +175,11 @@
             gap: 5px;
         }
         
-        /* FIXED: Added text justification for paragraphs */
         p {
             text-align: justify;
             margin-bottom: 15px;
         }
         
-        /* Improved list styling */
         ul {
             padding-left: 20px;
         }
@@ -175,7 +187,7 @@
         li {
             margin-bottom: 8px;
             position: relative;
-            text-align: left; /* Keep list items left-aligned */
+            text-align: left;
         }
         
         li::before {
@@ -331,7 +343,6 @@
             color: var(--secondary);
         }
         
-        /* Auto-scrolling skills animation */
         .skills-scroll-container {
             overflow: hidden;
             position: relative;
@@ -384,12 +395,10 @@
             }
         }
         
-        /* Pause animation on hover */
         .skills-scroll-container:hover .skills-scroll-track {
             animation-play-state: paused;
         }
         
-        /* Fade-in animation for skill tags */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
@@ -399,7 +408,6 @@
             animation: fadeIn 0.5s ease forwards;
         }
         
-        /* Improved responsive design */
         @media (max-width: 768px) {
             .contact-info {
                 flex-direction: column;
@@ -422,26 +430,28 @@
                 animation: scroll-skills 20s linear infinite;
             }
             
-            /* Adjust text justification for mobile */
             p {
                 text-align: left;
                 hyphens: auto;
+            }
+            
+            header {
+                padding: 40px 20px;
+                min-height: 250px;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <div class="header-content">
-                <h1>Abdul Moeed</h1>
-                <p class="title">Machine Learning | Deep Learning | Data Science Engineer | Front-End Website Developer</p>
-                <div class="contact-info">
-                    <a href="tel:+923125675916"><i class="fas fa-phone"></i> +92 312 5675916</a>
-                    <a href="mailto:abdulmoeed04242@gmail.com"><i class="fas fa-envelope"></i> abdulmoeed04242@gmail.com</a>
-                    <a href="https://www.linkedin.com/in/abdul-moeed-936671379" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                    <a href="https://github.com/Moeed042" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                </div>
+        <div class="header-content">
+            <h1>Abdul Moeed</h1>
+            <p class="title">Machine Learning | Deep Learning | Data Science Engineer | Front-End Website Developer</p>
+            <div class="contact-info">
+                <a href="tel:+923125675916"><i class="fas fa-phone"></i> +92 312 5675916</a>
+                <a href="mailto:abdulmoeed04242@gmail.com"><i class="fas fa-envelope"></i> abdulmoeed04242@gmail.com</a>
+                <a href="https://www.linkedin.com/in/abdul-moeed-936671379" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/Moeed042" target="_blank"><i class="fab fa-github"></i> GitHub</a>
             </div>
         </div>
     </header>
@@ -455,7 +465,6 @@
         <section id="skills">
             <h2><i class="fas fa-tools"></i> Technical Skills</h2>
             
-            <!-- Auto-scrolling skills section -->
             <div class="skills-scroll-container">
                 <div class="skills-scroll-track">
                     <div class="scroll-skill">Python</div>
@@ -481,7 +490,6 @@
                     <div class="scroll-skill">Responsive Design</div>
                     <div class="scroll-skill">NLP</div>
                     <div class="scroll-skill">CNN</div>
-                    <!-- Duplicate for seamless loop -->
                     <div class="scroll-skill">Python</div>
                     <div class="scroll-skill">Machine Learning</div>
                     <div class="scroll-skill">Data Science</div>
@@ -501,7 +509,6 @@
                     <div class="scroll-skill">Feature Engineering</div>
                     <div class="scroll-skill">EDA</div>
                     <div class="scroll-skill">Model Optimization</div>
-                   
                     <div class="scroll-skill">Figma</div>
                     <div class="scroll-skill">Responsive Design</div>
                     <div class="scroll-skill">NLP</div>
@@ -711,7 +718,6 @@
     </div>
 
     <script>
-        // Add a simple animation for skill tags on page load
         document.addEventListener('DOMContentLoaded', function() {
             const skillTags = document.querySelectorAll('.skill-tag');
             skillTags.forEach((tag, index) => {
